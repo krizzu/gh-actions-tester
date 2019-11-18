@@ -1,18 +1,17 @@
-name: Eslint check
+name: Eslint run
 on: [push]
 jobs:
-  eslint_check:
-    name: Eslint check
+  prep:
+    name: prepare
     runs-on: ubuntu-latest
     steps:
       # Checkout action must run prior to eslint check
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v1
-      - name: Install deps
+      - name: install dependencies
         run: yarn install
-      - name: Lint
+      - name: lint
         uses: krizzu/eslint-check-action@master
         with:
           ghToken: ${{ secrets.GITHUB_TOKEN }}
           eslintFiles: "src"
-
