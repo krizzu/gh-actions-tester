@@ -11,7 +11,7 @@ jobs:
       - name: Install deps
         run: yarn install
       - name: Lint
-        uses: krizzu/eslint-check-action@master
+        uses: krizzu/eslint-check-action@Pv1.0.1-testing
         with:
           ghToken: ${{ secrets.GITHUB_TOKEN }}
           eslintFiles: "src"
